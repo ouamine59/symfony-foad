@@ -1,0 +1,6 @@
+{% if app.user %}
+    <div class="mb-3 d-flex justify-content-end ">
+        <p>Bonjour {{ app.user.userIdentifier }}
+         <a class=' bg-danger text-light ' href="{{ path('app_logout') }}">X</a></p>
+    </div>
+{% endif %}

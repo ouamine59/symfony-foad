@@ -1,0 +1,27 @@
+{{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+
+    <div class="mb-3">
+        {# Champ pour le rôle #}
+        {{ form_label(form.roles, 'Role', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.roles, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le rôle'}}) }}
+        {{ form_errors(form.roles) }}
+    </div>
+
+    <div class="mb-3">
+        {# Champ pour l'email #}
+        {{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre email'}}) }}
+        {{ form_errors(form.email) }}
+    </div>
+
+    <div class="mb-3">
+        {# Champ pour le mot de passe (doit rester vide) #}
+        {{ form_label(form.password, 'Mot de passe', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.password, {'attr': {'class': 'form-control', 'placeholder': 'Entrez un mot de passe', 'value': ''}}) }}
+        {{ form_errors(form.password) }}
+    </div>
+
+    {# Bouton de soumission #}
+    <button class="btn btn-primary mt-3">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}
