@@ -17,7 +17,12 @@ jobs:
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
-
+    - name: "Install PHP with extensions"
+      uses: "shivammathur/setup-php@v2"
+    -
+      name: "Install Composer dependencies"
+      uses: "ramsey/composer-install@v2"
+      
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v3
