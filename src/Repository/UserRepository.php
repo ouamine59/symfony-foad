@@ -32,10 +32,12 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->getEntityManager()->persist($user);
         $this->getEntityManager()->flush();
     }
-    public function userWithoutPassword():array{
+
+    public function userWithoutPassword(): array
+    {
         return $this->createQueryBuilder('a')
-        ->select("NEW App\\DTO\\userDTO(a.id, a.email, a.roles)")
-        
+        ->select('NEW App\\DTO\\userDTO(a.id, a.email, a.roles)')
+
         ->getQuery()
         ->getResult();
     }
