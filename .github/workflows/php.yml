@@ -13,10 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: "Install PHP with extensions"
+      uses: "shivammathur/setup-php@v2"
+    -
+      name: "Install Composer dependencies"
+      uses: "ramsey/composer-install@v2"
     - name: PHP CS Fixer
-      uses: StephaneBour/actions-php-cs-fixer@1.0
-      with:
-        dir: './src'
+      run: vendor/bin/php-cs-fixer check --diff
   build:
 
     runs-on: ubuntu-latest
