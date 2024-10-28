@@ -17,8 +17,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Conventional Commits Checker
-      uses: netodevel/conventional-commits-checker@v1.0.1
             
     - uses: actions/checkout@v4
     - name: "Install PHP with extensions"
