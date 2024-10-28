@@ -12,10 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Conventional Commits Checker
-      uses: netodevel/conventional-commits-checker@v1.0.1
-      with: # do not change the order of params
-          target-branch: ${{ github.event.pull_request.base.ref }}  #required
-          current-branch: ${{ github.event.pull_request.head.ref }} #required
+      uses: agenthunt/conventional-commit-checker-action@v1.0.0
   linter:  
     runs-on: ubuntu-latest
 
