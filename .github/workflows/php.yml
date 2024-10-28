@@ -8,6 +8,11 @@ permissions:
   contents: read
 
 jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Conventional Commits Checker
+      uses: netodevel/conventional-commits-checker@v1.0.1
   linter:  
     runs-on: ubuntu-latest
 
