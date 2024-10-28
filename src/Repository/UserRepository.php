@@ -37,10 +37,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     {
         return $this->createQueryBuilder('a')
         ->select('NEW App\\DTO\\userDTO(a.id, a.email, a.roles)')
-
         ->getQuery()
         ->getResult();
     }
+
     //    @return User[] Returns an array of User objects
     //
     //    public function findByExampleField($value): array
